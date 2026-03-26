@@ -10,6 +10,7 @@ import re
 import logging
 import urllib.request
 import smtplib
+import os
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
@@ -21,8 +22,8 @@ logger = logging.getLogger(__name__)
 # ─────────────────────────────────────────────
 # EMAIL CONFIG — update these with your Gmail
 # ─────────────────────────────────────────────
-SENDER_EMAIL = "your_gmail@gmail.com"       # ← PUT YOUR GMAIL HERE
-SENDER_PASSWORD = "your_app_password_here"  # ← PUT YOUR GMAIL APP PASSWORD HERE
+SENDER_EMAIL = os.environ.get("EMAIL_USER")
+SENDER_PASSWORD = os.environ.get("EMAIL_PASS")
 
 # In-memory alert store: { alert_id: { url, target_price, email, product_name, triggered } }
 alerts_store = {}
