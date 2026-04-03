@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from "recharts";
 
-const BACKEND = "https://priceradar-wwnt.onrender.com";
+const BACKEND = process.env.REACT_APP_BACKEND_URL || "https://priceradar-wwnt.onrender.com";
 const COLORS = {
   bg: "#0a0a0f", panel: "#111118", border: "#1e1e2e",
   accent: "#00e5ff", accentDim: "#00e5ff22",
